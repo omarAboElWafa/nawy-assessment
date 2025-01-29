@@ -1,0 +1,39 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "prettier"
+    ],
+    "rules": {
+        "@typescript-eslint/semi": ["error", "always"],
+        "keyword-spacing": ["error", { "before": true, "after": true }],
+        "quotes": ["error", "single"],
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "no-console": "warn",
+        "linebreak-style": ["error", "unix"],
+        "object-curly-spacing": ["error", "always"],
+        "space-before-function-paren": ["error", "never"],
+        // Enforce consistent use of trailing commas
+        "comma-dangle": ["error", "always-multiline"],
+        "@typescript-eslint/consistent-type-imports": ["error"],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/member-delimiter-style": ["error", {
+            "multiline": {
+                "delimiter": "semi",
+                "requireLast": true
+            },
+            "singleline": {
+                "delimiter": "semi",
+                "requireLast": false
+            }
+        }]
+    }
+}

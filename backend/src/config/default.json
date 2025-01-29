@@ -1,0 +1,16 @@
+{
+    "server": {
+      "port": 5000
+    },
+    "mongo": {
+      "uri": "mongodb://localhost:27017/nawy-app"
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379
+    },
+    "logger": {
+      "level": "info"
+    }
+  }
+  
