@@ -1,0 +1,20 @@
+{
+    "name": "logger",
+    "version": "1.0.0",
+    "description": "Logger module using Pino",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "build": "tsc --project tsconfig.json",
+      "lint": "eslint . --ext .ts",
+      "test": "jest"
+    },
+    "dependencies": {
+      "pino": "^8.14.0"
+    },
+    "devDependencies": {
+      "@types/pino": "^8.3.5",
+      "typescript": "^5.2.2"
+    },
+    "license": "MIT"
+  }
