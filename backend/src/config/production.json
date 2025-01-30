@@ -1,6 +1,15 @@
 {
     "server": {
-      "port": 8080
+      "port": 8080,
+      "apiVersion": "v1",
+      "apiPrefix": "/api",
+      "cors": {
+        "origin": "https://production-domain.com",
+        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "preflightContinue": false,
+        "optionsSuccessStatus": 204,
+        "credentials": true
+      }
     },
     "mongo": {
       "uri": "mongodb://mongo:27017/nawy-app"
