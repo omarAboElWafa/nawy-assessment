@@ -34,6 +34,10 @@ export class ApartmentDTO {
   @IsString({ each: true })
   amenities?: string[];
 
+  @IsOptional()
+  @IsString({ each: true })
+  images?: string[];
+
   constructor(
     _id: string,
     name: string,
@@ -45,6 +49,7 @@ export class ApartmentDTO {
     description?: string,
     availableFrom?: Date,
     amenities?: string[],
+    images?: string[],
   ) {
     this._id = _id;
     this.name = name;
@@ -56,5 +61,6 @@ export class ApartmentDTO {
     this.description = description;
     this.availableFrom = availableFrom;
     this.amenities = amenities;
+    this.images = images;
   }
 }
