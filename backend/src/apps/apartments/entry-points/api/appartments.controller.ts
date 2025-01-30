@@ -1,22 +1,16 @@
 import { Request, Response } from 'express';
 import { IApartmentsService } from '@apps/apartments/domain/interfaces/IApartmentsService';
+import { ApartmentService } from '@apps/apartments/domain/apartment.service';
 import { IApartmentFilters } from '@apps/apartments/domain/interfaces/IApartmentFilter';
 import { ApartmentDTO } from '@apps/apartments/domain/apartment.dto';
 import { getFiltersFromRequest } from '@apps/apartments/domain/utils/getFiltersFromRequest';
 
 export class ApartmentsController {
-  private service: IApartmentsService;
-  private getFiltersFromRequest: (req: Request) => IApartmentFilters;
-  constructor(
-    appartmentsService: IApartmentsService,
-    getFiltersFromRequest: (req: Request) => IApartmentFilters,
-  ) {
-    this.service = appartmentsService;
-    this.getFiltersFromRequest = getFiltersFromRequest;
-  }
+  private service: IApartmentsService = new ApartmentService();
+  private readonly getFiltersFromRequest = getFiltersFromRequest;
 
   async getAppartments(req: Request, res: Response): Promise<void> {
-    const filters = this.getFiltersFromRequest(req);
+    const filters: IApartmentFilters = this.getFiltersFromRequest(req);
 
     try {
       const apartments = await this.service.getAllApartments(filters);
