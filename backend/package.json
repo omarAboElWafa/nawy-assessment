@@ -12,6 +12,7 @@
     "prestart": "npm run build"
   },
   "dependencies": {
+    "class-validator": "^0.14.1",
     "convict": "^6.2.3",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
