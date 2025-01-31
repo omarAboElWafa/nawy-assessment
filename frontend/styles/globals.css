@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Container */
+.container {
+  @apply px-2 sm:px-4 md:px-6 lg:px-8 font-sans;
+}
+
+.nawy-logo-container {
+  @apply fixed top-0 left-1/2 transform -translate-x-1/2 bg-white w-full text-center py-4 shadow-md z-50;
+}
+
+.page-content {
+  @apply mt-28;
+}
+
+/* Grid Layout */
+.cards {
+  @apply grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3;
+}
+
+
+/* Card Styles */
+.card {
+  @apply flex flex-col bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden;
+}
+
+.card-image {
+  @apply w-full h-48 object-cover;
+}
+
+.card-content {
+  @apply p-4 flex flex-col;
+}
+
+.title {
+  @apply text-lg font-bold mb-1;
+}
+
+.subtitle {
+  @apply text-sm text-gray-600 mb-2;
+}
+
+.price-info {
+  @apply flex flex-col items-start mb-4 text-sm;
+}
+
+.price {
+  @apply font-bold text-blue-500 text-lg;
+}
+
+.buttons {
+  @apply flex justify-between;
+}
+
+.call-btn {
+  @apply bg-blue-500 text-white px-4 py-2 rounded;
+}
+
+.whatsapp-btn {
+  @apply bg-green-500 text-white px-4 py-2 rounded;
+}
+
+/* Header Styles */
+.header {
+  @apply flex justify-between items-center p-4 bg-white shadow-md w-full mt-28 
+}
+
+.header-title {
+  @apply text-xl font-bold text-blue-900 mb-2;
+}
+
+.header-info {
+  @apply text-gray-600 mb-4;
+}
+
+.header-controls {
+  @apply flex space-x-6;
+}
+
+.filter-btn {
+  @apply bg-blue-500 text-white px-6 py-3 rounded flex items-center;
+}
+
+.sort-btn {
+  @apply bg-gray-200 text-gray-800 px-6 py-3 rounded flex items-center;
+}
+
+.filter-badge {
+  @apply bg-orange-500 text-white text-xs font-bold ml-1 px-2 py-0.5 rounded-full;
+}
+
+@media screen and (min-width: 768px) {
+  .cards {
+    @apply grid-cols-2;
+  }
+  
+  .header {
+    @apply flex-row;
+  }
+
+  .header-controls {
+    @apply mt-0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cards {
+    @apply grid-cols-1;
+  }
+  
+  .header {
+    @apply p-3 bg-white shadow-md w-full mt-52;
+  }
+
+  .header-title {
+    @apply text-sm font-bold text-blue-900 mb-1;
+  }
+
+  .header-info {
+    @apply text-gray-600 mb-3;
+  }
+
+  .header-controls {
+    @apply flex space-x-4;
+  }
+
+  .filter-btn {
+    @apply bg-blue-500 text-sm text-white px-2 py-0.5 rounded flex items-center;
+  }
+
+  .sort-btn {
+    @apply bg-gray-200 text-sm text-gray-800 px-2 py-0.5 rounded flex items-center;
+  }
+
+  .filter-badge {
+    @apply bg-orange-500 text-white text-xs font-bold ml-1 px-1 py-0.5 rounded-full;
+  }
+
+}
