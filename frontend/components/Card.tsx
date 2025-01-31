@@ -25,7 +25,7 @@ export default function Card({
     <div className="card border rounded-lg shadow-lg overflow-hidden bg-white">
       <div className="relative">
         <Image
-          src={image}
+          src={image ? image : "http://localhost:3000/public/apartment_placeholder.jpg"}
           alt={title}
           width={500}
           height={300}
