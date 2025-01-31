@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply p-4 max-w-md mx-auto font-sans;
+}
+
+.header {
+  @apply flex justify-between items-center mb-4;
+}
+
+.header h1 {
+  @apply text-lg font-bold;
+}
+
+.icon-btn {
+  @apply bg-transparent border-none text-xl cursor-pointer mx-2;
+}
+
+.cards {
+  @apply flex flex-col gap-4;
+}
+
+.card {
+  @apply flex flex-col bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden;
+}
+
+.card-image {
+  @apply w-full h-40 object-cover;
+}
+
+.card-content {
+  @apply p-4 flex flex-col;
+}
+
+.title {
+  @apply text-lg font-bold mb-2;
+}
+
+.subtitle {
+  @apply text-sm text-gray-600 mb-4;
+}
+
+.price-info {
+  @apply flex justify-between items-center mb-4 text-sm;
+}
+
+.price {
+  @apply font-bold text-blue-600;
+}
+
+.buttons {
+  @apply flex justify-between;
+}
+
+.call-btn {
+  @apply px-4 py-2 text-sm bg-blue-600 text-white rounded;
+}
+
+.whatsapp-btn {
+  @apply px-4 py-2 text-sm bg-green-500 text-white rounded;
+}
