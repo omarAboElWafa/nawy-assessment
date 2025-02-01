@@ -6,39 +6,51 @@ import { ApartmentDTO } from '../../domain/apartment.dto';
 import { getFiltersFromRequest } from '../../domain/utils/getFiltersFromRequest';
 
 export class ApartmentsController {
-  private service: IApartmentsService = new ApartmentService();
-  private readonly getFiltersFromRequest = getFiltersFromRequest;
+  private service: IApartmentsService;
 
-  async getAppartments(req: Request, res: Response): Promise<void> {
-    const filters: IApartmentFilters = this.getFiltersFromRequest(req);
+  public constructor(service?: IApartmentsService) {
+    this.service = service ?? new ApartmentService();
+  }
+
+  public readonly getAppartments = async (
+    req: Request,
+    res: Response,
+  ): Promise<any> => {
+    const filters = getFiltersFromRequest(req);
 
     try {
       const apartments = await this.service.getAllApartments(filters);
-      res.json(apartments);
+      return res.json(apartments);
     } catch (error: Error | any) {
-      res.status(500).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     }
-  }
+  };
 
-  async addApartment(req: Request, res: Response): Promise<void> {
+  public readonly addApartment = async (
+    req: Request,
+    res: Response,
+  ): Promise<any> => {
     const apartmentToAdd: ApartmentDTO = req.body;
 
     try {
       const addedApartment = await this.service.addApartment(apartmentToAdd);
-      res.status(201).json(addedApartment);
+      return res.status(201).json(addedApartment);
     } catch (error: Error | any) {
-      res.status(500).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     }
-  }
+  };
 
-  async getApartmentById(req: Request, res: Response): Promise<void> {
+  public readonly getApartmentById = async (
+    req: Request,
+    res: Response,
+  ): Promise<any> => {
     const apartmentId = req.params.id;
 
     try {
       const apartment = await this.service.getApartmentById(apartmentId);
-      res.json(apartment);
+      return res.json(apartment);
     } catch (error: Error | any) {
-      res.status(500).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     }
-  }
+  };
 }
