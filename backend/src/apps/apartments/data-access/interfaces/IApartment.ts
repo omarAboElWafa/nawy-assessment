@@ -1,3 +1,3 @@
-import { ApartmentDTO } from '@apps/apartments/domain/apartment.dto';
+import { ApartmentDTO } from '../../domain/apartment.dto';
 
 export type Apartment = ApartmentDTO;

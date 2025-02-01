@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { IApartmentsService } from '@apps/apartments/domain/interfaces/IApartmentsService';
-import { ApartmentService } from '@apps/apartments/domain/apartment.service';
-import { IApartmentFilters } from '@apps/apartments/domain/interfaces/IApartmentFilter';
-import { ApartmentDTO } from '@apps/apartments/domain/apartment.dto';
-import { getFiltersFromRequest } from '@apps/apartments/domain/utils/getFiltersFromRequest';
+import { IApartmentsService } from '../../domain/interfaces/IApartmentsService';
+import { ApartmentService } from '../../domain/apartment.service';
+import { IApartmentFilters } from '../../domain/interfaces/IApartmentFilter';
+import { ApartmentDTO } from '../../domain/apartment.dto';
+import { getFiltersFromRequest } from '../../domain/utils/getFiltersFromRequest';
 
 export class ApartmentsController {
   private service: IApartmentsService = new ApartmentService();

@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import config from './config';
-import logger from './libraries/logger/src';
+// import logger from './libraries/logger/src';
 import apartmentRoutes from './apps/apartments/entry-points/api/apartments.routes';
 
 // Load environment variables
@@ -18,5 +18,6 @@ app.use(`/api/${apiVersion}/products`, apartmentRoutes);
 // Start Server
 const PORT = config.get('server.port');
 app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
+  // logger.info(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

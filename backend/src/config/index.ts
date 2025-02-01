@@ -26,6 +26,12 @@ const config = convict({
       default: 'v1',
       env: 'API_VERSION',
     },
+    apiPrefix: {
+      doc: 'The API prefix.',
+      format: String,
+      default: '/api',
+      env: 'API_PREFIX',
+    },
     cors: {
       doc: 'CORS configuration.',
       format: Object,

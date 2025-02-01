@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '4242:5000'
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=development
+      - SERVER_PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/nawy-app
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
