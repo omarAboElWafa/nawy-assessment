@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "d6e12e7f-1fd9-44a2-bff6-540bdfc83b44",
+		"name": "nawy-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17178333"
+	},
+	"item": [
+		{
+			"name": "apartments",
+			"item": [
+				{
+					"name": "get all apartments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/apartments/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apartments",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success 200 - get all apartment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/apartments/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"apartments",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "440"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b8-jH9VvKnNltwuRz/fh1rmJpR8lP8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 14:27:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"679e2ba9e96206a67a033606\",\n        \"title\": \"Duplex - J East\",\n        \"subtitle\": \"New Cairo, Egypt\",\n        \"description\": \"A beautiful luxury apartment located in the heart of the city.\",\n        \"price\": 250000,\n        \"currency\": \"EGP\",\n        \"payment\": \"87,175 Monthly / 9 Years\",\n        \"location\": \"Downtown City\",\n        \"rooms\": 3,\n        \"bedrooms\": 1,\n        \"bathrooms\": 2,\n        \"area\": 120,\n        \"amenities\": [\n            \"Pool\",\n            \"Gym\",\n            \"Parking\"\n        ],\n        \"availableFrom\": \"2023-10-01T00:00:00.000Z\",\n        \"images\": [\n            \"image1.jpg\",\n            \"image2.jpg\"\n        ],\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create new apartment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Duplex - J East\",\r\n  \"subtitle\": \"New Cairo, Egypt\",\r\n  \"location\": \"Downtown City\",\r\n  \"rooms\": 3,\r\n  \"bedrooms\": 1,\r\n  \"bathrooms\": 2,\r\n  \"area\": 120,\r\n  \"price\": 250000,\r\n  \"currency\": \"EGP\",\r\n  \"payment\": \"87,175 Monthly / 9 Years\",\r\n  \"description\": \"A beautiful luxury apartment located in the heart of the city.\",\r\n  \"availableFrom\": \"2023-10-01T00:00:00.000Z\",\r\n  \"amenities\": [\"Pool\", \"Gym\", \"Parking\"],\r\n  \"images\": [\"image1.jpg\", \"image2.jpg\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/apartments/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apartments",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create new apartment - 200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Duplex - J East\",\r\n  \"subtitle\": \"New Cairo, Egypt\",\r\n  \"location\": \"Downtown City\",\r\n  \"rooms\": 3,\r\n  \"bedrooms\": 1,\r\n  \"bathrooms\": 2,\r\n  \"area\": 120,\r\n  \"price\": 250000,\r\n  \"currency\": \"EGP\",\r\n  \"payment\": \"87,175 Monthly / 9 Years\",\r\n  \"description\": \"A beautiful luxury apartment located in the heart of the city.\",\r\n  \"availableFrom\": \"2023-10-01T00:00:00.000Z\",\r\n  \"amenities\": [\"Pool\", \"Gym\", \"Parking\"],\r\n  \"images\": [\"image1.jpg\", \"image2.jpg\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/apartments/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"apartments",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "438"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b6-2X5EhEM2LBu3lpx0er8vjYMA6KQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 14:11:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Duplex - J East\",\n    \"subtitle\": \"New Cairo, Egypt\",\n    \"description\": \"A beautiful luxury apartment located in the heart of the city.\",\n    \"price\": 250000,\n    \"currency\": \"EGP\",\n    \"payment\": \"87,175 Monthly / 9 Years\",\n    \"location\": \"Downtown City\",\n    \"rooms\": 3,\n    \"bedrooms\": 1,\n    \"bathrooms\": 2,\n    \"area\": 120,\n    \"amenities\": [\n        \"Pool\",\n        \"Gym\",\n        \"Parking\"\n    ],\n    \"availableFrom\": \"2023-10-01T00:00:00.000Z\",\n    \"images\": [\n        \"image1.jpg\",\n        \"image2.jpg\"\n    ],\n    \"_id\": \"679e2ba9e96206a67a033606\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get one apartment details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:4242",
+			"type": "string"
+		}
+	]
+}
