@@ -1,7 +1,9 @@
 export interface IApartmentFilters {
-  name?: string;
+  title?: string;
+  subtitle?: string;
   location?: string;
   rooms?: number;
+  bedrooms?: number;
   bathrooms?: number;
   area?: number;
   dateRange?: {

@@ -4,9 +4,11 @@ import { IApartmentFilters } from '../interfaces/IApartmentFilter';
 export function getFiltersFromRequest(req: Request): IApartmentFilters {
   const filters: IApartmentFilters = {};
   const {
-    name,
+    title,
+    subtitle,
     location,
     rooms,
+    bedrooms,
     bathrooms,
     area,
     minPrice,
@@ -14,9 +16,11 @@ export function getFiltersFromRequest(req: Request): IApartmentFilters {
     amenities,
     availableFrom,
   } = req.query;
-  if (name) filters.name = String(name);
+  if (title) filters.title = String(title);
+  if (subtitle) filters.subtitle = String(subtitle);
   if (location) filters.location = String(location);
   if (rooms) filters.rooms = Number(rooms);
+  if (bedrooms) filters.bedrooms = Number(bedrooms);
   if (bathrooms) filters.bathrooms = Number(bathrooms);
   if (area) filters.area = Number(area);
   if (minPrice) filters.minPrice = Number(minPrice);

@@ -68,4 +68,13 @@ export class ApartmentService implements IApartmentsService {
       throw new Error('Could not find apartments by rooms');
     }
   }
+
+  async findByBedrooms(bedrooms: number) {
+    try {
+      return await repo.findByBedrooms(bedrooms);
+    } catch (error) {
+      console.error('Error finding apartments by bedrooms:', error);
+      throw new Error('Could not find apartments by bedrooms');
+    }
+  }
 }

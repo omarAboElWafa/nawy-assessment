@@ -4,6 +4,7 @@ export interface IApartmentRepository {
   findByPrice(price: number): Promise<ApartmentDTO[]>;
   findByArea(area: number): Promise<ApartmentDTO[]>;
   findByRooms(rooms: number): Promise<ApartmentDTO[]>;
+  findByBedrooms(bedrooms: number): Promise<ApartmentDTO[]>;
   findByBathrooms(bathrooms: number): Promise<ApartmentDTO[]>;
   findByAmenities(amenities: string[]): Promise<ApartmentDTO[]>;
 }

@@ -5,13 +5,19 @@ export class ApartmentDTO {
   _id: string;
 
   @IsString()
-  name: string;
+  title: string;
+
+  @IsString()
+  subtitle: string;
 
   @IsString()
   location: string;
 
   @IsNumber()
   rooms: number;
+
+  @IsNumber()
+  bedrooms: number;
 
   @IsNumber()
   bathrooms: number;
@@ -21,6 +27,12 @@ export class ApartmentDTO {
 
   @IsNumber()
   price: number;
+
+  @IsString()
+  currency: string;
+
+  @IsString()
+  payment: string;
 
   @IsOptional()
   @IsString()
@@ -40,24 +52,32 @@ export class ApartmentDTO {
 
   constructor(
     _id: string,
-    name: string,
+    title: string,
+    subtitle: string,
     location: string,
     rooms: number,
+    bedrooms: number,
     bathrooms: number,
     area: number,
     price: number,
+    currency: string,
+    payment: string,
     description?: string,
     availableFrom?: Date,
     amenities?: string[],
     images?: string[],
   ) {
     this._id = _id;
-    this.name = name;
+    this.title = title;
+    this.subtitle = subtitle;
     this.location = location;
     this.rooms = rooms;
+    this.bedrooms = bedrooms;
     this.bathrooms = bathrooms;
     this.area = area;
     this.price = price;
+    this.currency = currency;
+    this.payment = payment;
     this.description = description;
     this.availableFrom = availableFrom;
     this.amenities = amenities;

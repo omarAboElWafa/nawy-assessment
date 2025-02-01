@@ -34,6 +34,10 @@ export class ApartmentRepository implements IApartmentRepository {
     return this._model.find({ rooms }).exec();
   }
 
+  async findByBedrooms(bedrooms: number): Promise<ApartmentDTO[]> {
+    return this._model.find({ bedrooms }).exec();
+  }
+
   async findByBathrooms(bathrooms: number): Promise<ApartmentDTO[]> {
     return this._model.find({ bathrooms }).exec();
   }
