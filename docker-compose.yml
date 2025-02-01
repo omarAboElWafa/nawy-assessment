@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-1
+    ports:
+      - "4242:5000"
+    depends_on:
+      - mongo
+    environment:
+      - NODE_ENV=development
+      - SERVER_PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/nawy-app
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
